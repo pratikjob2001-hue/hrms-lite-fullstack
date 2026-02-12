@@ -1,6 +1,6 @@
-//const BASE_URL = "http://127.0.0.1:8000/api";
-const BASE_URL = import.meta.env.VITE_API_URL;
-
+const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://hrms-lite-backend-q76v.onrender.com/api";
 
 /* =================================
    GET ATTENDANCE (WITH FILTERS)
@@ -29,7 +29,6 @@ export const getAttendanceList = async (employee = "", date = "") => {
     throw new Error(error.message);
   }
 };
-
 
 /* =================================
    ADD ATTENDANCE
